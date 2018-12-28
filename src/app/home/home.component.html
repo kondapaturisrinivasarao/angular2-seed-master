@@ -1,14 +1,14 @@
 <div class="container">
     <h3>Angular forms</h3>
     <form #form="ngForm" novalidate>
-        <div class="form-group has-error">
-            <label class="control-label">First Name</label>
+        <!-- <div class="form-group ">
+            <label >First Name</label>
             <input #firstName="ngModel" required type="text" class="form-control" 
             name="firstName" [(ngModel)]="model.firstName" >
             <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
                 first name is required
             </div>
-        </div>
+        </div> -->
          <!-- <div class="form-group">
             <label>Last Name</label>
             <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname">
@@ -31,14 +31,15 @@
         </div> -->
 
        
-       <!-- <div class="form-group">
+       <div class="form-group">
             <label>Primary Language</label>
-            <select class="form-control">
+            <select class="form-control" name="primaryLanguage" [(ngModel)]="model.primaryLanguage">
+                <option value="default">Select a language</option>
                 <option *ngFor="let lang of languages">
                         {{lang}}
                 </option>
             </select>
-        </div> -->
+        </div>
         <button class="btn btn-primary" type="submit">ok</button>
     </form>
 </div>

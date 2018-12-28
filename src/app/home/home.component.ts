@@ -10,6 +10,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   languages = ['English', 'Hindi', 'Telugu']
-  model = new Employee('Dan', 'Smith', true, 'w2')
+  model = new Employee('Dan', 'Smith', true, 'w2','default')
 
 }
