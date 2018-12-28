@@ -1,0 +1,67 @@
+<div class="container">
+    <h3>Angular forms</h3>
+    <form #form="ngForm" novalidate>
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstname" [(ngModel)]="model.firstname" >
+        </div>
+         <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="is-full-time" [(ngModel)]="model.isFullTime">Full Time Employee
+            </label>
+        </div>
+        <label>payment type</label>
+        <div class="radio">
+            <label>
+                <input type="radio" name="paymentType" [(ngModel)]="model.paymentType" value="w2" checked>w2
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="paymentType" [(ngModel)]="model.paymentType"  value="1099">1099
+            </label>
+        </div>
+
+        <label>sample</label>
+
+        <!-- <div class="radio" *ngFor="let sample of samplemodel;let idx = index">
+            <label>
+                <input type="radio" name="sample" 
+                [(ngModel)]="sample.value"  [checked]="sample.value == true"  value={{sample.value}}
+                >{{sample.text}}
+            </label>
+        </div> -->
+
+        <div class="radio">
+                <label>
+                    <input type="radio" name="sample" 
+                    [(ngModel)]="model.sample" value="true" checked>1
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sample" 
+                    [(ngModel)]="model.sample"  value="false">2
+                </label>
+            </div>
+       
+       <!-- <div class="form-group">
+            <label>Primary Language</label>
+            <select class="form-control">
+                <option *ngFor="let lang of languages">
+                        {{lang}}
+                </option>
+            </select>
+        </div> -->
+        <button class="btn primary" type="submit">ok</button>
+    </form>
+    {{form.pristine}}
+    model:{{model | json}}
+    <br>
+    Angular:{{form.value | json}}
+
+</div>
